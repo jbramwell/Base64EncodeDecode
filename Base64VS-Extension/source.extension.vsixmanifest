@@ -4,6 +4,7 @@
         <Identity Id="Base64VS_Extension.6d606e7a-3810-4186-9645-b6e170ff85b8" Version="1.0" Language="en-US" Publisher="Moonspace Labs, LLC" />
         <DisplayName>Base64 Encode/Decode</DisplayName>
         <Description xml:space="preserve">Provides a Visual Studio Tool Window for Base64 encoding and decoding of text.</Description>
+        <License>LICENSE</License>
         <Icon>Base64.ico</Icon>
         <PreviewImage>Base64.ico</PreviewImage>
         <Tags>base64,encode,decode</Tags>
