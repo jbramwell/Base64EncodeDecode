@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2005
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Base64VS-Extension", "Base64VS-Extension\Base64VS-Extension.csproj", "{1E0A3AD2-E92A-4D15-B07B-94C414A791F3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1E0A3AD2-E92A-4D15-B07B-94C414A791F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E0A3AD2-E92A-4D15-B07B-94C414A791F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E0A3AD2-E92A-4D15-B07B-94C414A791F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E0A3AD2-E92A-4D15-B07B-94C414A791F3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FCEC9E9B-5772-4962-97A9-4A4766C2B8F6}
+	EndGlobalSection
+EndGlobal
