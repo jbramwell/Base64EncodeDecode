@@ -17,10 +17,8 @@
         }
 
         /// <summary>
-        /// Handles click on the button by displaying a message box.
+        /// Base64-encode the source text.
         /// </summary>
-        /// <param name="sender">The event sender.</param>
-        /// <param name="e">The event args.</param>
         [SuppressMessage("Microsoft.Globalization", "CA1300:SpecifyMessageBoxOptions", Justification = "Sample code")]
         [SuppressMessage("StyleCop.CSharp.NamingRules", "SA1300:ElementMustBeginWithUpperCaseLetter", Justification = "Default event handler naming pattern")]
         private void ButtonEncode_Click(object sender, RoutedEventArgs e)
@@ -29,10 +27,21 @@
             resultText.Text = System.Convert.ToBase64String(plainTextBytes);
         }
 
+        /// <summary>
+        /// Base64-decode the source text.
+        /// </summary>
         private void ButtonDecode_Click(object sender, RoutedEventArgs e)
         {
             var base64EncodedBytes = System.Convert.FromBase64String(sourceText.Text);
             resultText.Text = System.Text.Encoding.UTF8.GetString(base64EncodedBytes);
+        }
+
+        /// <summary>
+        /// Copy the encoded/decoded results to the Clipboard.
+        /// </summary>
+        private void ButtonCopy_OnClick(object sender, RoutedEventArgs e)
+        {
+            Clipboard.SetText(resultText.Text);
         }
     }
 }

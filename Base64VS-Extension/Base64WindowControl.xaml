@@ -3,9 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:vsshell="clr-namespace:Microsoft.VisualStudio.Shell;assembly=Microsoft.VisualStudio.Shell.15.0"
-             Background="{DynamicResource {x:Static vsshell:VsBrushes.WindowKey}}"
-             Foreground="{DynamicResource {x:Static vsshell:VsBrushes.WindowTextKey}}"
+             Background="{DynamicResource VsBrush.Window}"
+             Foreground="{DynamicResource VsBrush.WindowText}"
              mc:Ignorable="d"
              d:DesignHeight="100" d:DesignWidth="600"
              Name="MyToolWindow">
@@ -14,19 +13,27 @@
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="70"/>
             <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="40"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
-        <Label Grid.Row="0" Grid.Column="0" Margin="10,0,0,0">Copy (or paste) here...</Label>
+        <Label Grid.Row="0" Grid.Column="0" Margin="10,0,0,0" Foreground="{DynamicResource VsBrush.WindowText}" Background="{DynamicResource VsBrush.Window}">Copy (or paste) here...</Label>
         <TextBox x:Name="sourceText" Grid.Row="1" Grid.Column="0" Margin="10,5,5,10" TextWrapping="Wrap" MinWidth="50" VerticalScrollBarVisibility="Auto" AcceptsReturn="True"/>
         <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Vertical" VerticalAlignment="Center">
             <Button x:Name="ButtonEncode" Content="Encode" Click="ButtonEncode_Click" Width="60" Height="20" Margin="0,0,0,5"/>
 
             <Button x:Name="ButtonDecode" Content="Decode" Click="ButtonDecode_Click" Width="60" Height="20"/>
         </StackPanel>
-        <Label Grid.Row="0" Grid.Column="2" Margin="5,0,0,0">Results</Label>
-        <TextBox x:Name="resultText" Grid.Row="1" Grid.Column="2" Margin="5,5,5,10" TextWrapping="Wrap" MinWidth="50" IsReadOnly="True" VerticalScrollBarVisibility="Auto" />
+        <Label Grid.Row="0" Grid.Column="2" Margin="5,0,0,0" Foreground="{DynamicResource VsBrush.WindowText}" Background="{DynamicResource VsBrush.Window}">Results</Label>
+        <TextBox x:Name="resultText" Grid.Row="1" Grid.Column="2" Margin="5,5,0,10" TextWrapping="Wrap" MinWidth="50" IsReadOnly="True" VerticalScrollBarVisibility="Auto" />
+        <Button x:Name="ButtonCopy" Grid.Row="1" Grid.Column="3" Width="20" Height="20" VerticalAlignment="Top" Margin="0,5,0,0" ToolTip="Copy results to clipboard" Click="ButtonCopy_OnClick">
+            <Button.ContentTemplate>
+                <DataTemplate>
+                    <Image Source="Resources/Copy.png"></Image>
+                </DataTemplate>
+            </Button.ContentTemplate>
+        </Button>
     </Grid>
 </UserControl>
